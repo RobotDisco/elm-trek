@@ -29,4 +29,15 @@ suite =
                 in
                 Main.travel 8 1 oldLoc |> Expect.equal newLoc
             )
+        , test "can we warp one quadrant AND one sector over?"
+            (\_ ->
+                let
+                    oldLoc =
+                        { qx = 0, qy = 0, sx = 5, sy = 3 }
+
+                    newLoc =
+                        { qx = 1, qy = 1, sx = 6, sy = 4 }
+                in
+                Main.travel 8 1.125 oldLoc |> Expect.equal newLoc
+            )
         ]
